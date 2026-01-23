@@ -1,0 +1,43 @@
+:root {
+    --color: dodgerblue; 
+    --background: white; 
+    --body-copy: 1rem;
+    --heading-copy: calc(var(--body-copy) * 2);
+    --gutter: 2rem;
+    --vertical: 4rem;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--color);
+    background-color: var(--background);
+    font-size: var(--body-copy);
+    block-size: 100vh;
+    display: grid; 
+    grid-template-rows: min-content 1fr min-content;
+    align-items:center;
+}
+
+main { 
+    padding-inline:var(--gutter);
+    padding-block: var(--vertical);
+}
+h1 {
+    font-size: var(--heading-copy)
+}
+ul {
+    padding-inline: var(--gutter);
+    display: grid;
+    gap: var(--gutter);
+}
+.reverse {
+    padding-block: var(--vertical);
+    color: var(--background);
+    background-color: var(--color);
+    padding-inline: var(--gutter);
+}
+footer {
+    color:var(--background);
+    background-color: var(--color);
+    padding-inline: var(--gutter);
+}

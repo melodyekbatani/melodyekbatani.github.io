@@ -1,43 +1,98 @@
 :root {
-    --color: dodgerblue; 
-    --background: white; 
-    --body-copy: 1rem;
-    --heading-copy: calc(var(--body-copy) * 2);
+    --color: rgb(234, 234, 234); 
+    --background: rgb(18, 18, 19); 
+    --text-color:rgb(255, 255, 255); 
     --gutter: 2rem;
-    --vertical: 4rem;
+    --vertical: 4rem;  
+    padding: 0.1rem;
+    margin: 1em;
+    background-color: rgb(217, 217, 217);
+
+    /*header fonts*/
+    --type-header: "megazoid", sans-serif;
+    --type-header-style: normal;
+    --heading-size: calc(var(--body-size) * 8);
+    --webkit-text-stroke-width: 1px;
+    
+    /*body copy fonts*/
+    --subheading-size: calc(var(--body-size) * 3);
+
+    /*body copy fonts*/
+    --type-body: "halyard-text", sans-serif;
+    --type-body-style: normal;
+    --type-body-weight:400;
+    --body-size: 1.5rem;
 }
 
 body {
-    font-family: sans-serif;
-    color: var(--color);
+    padding-block-start:10rem;
+    border-radius: 20px; 
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    color: var(--text-color);
     background-color: var(--background);
-    font-size: var(--body-copy);
-    block-size: 100vh;
+    font-size: var(--body-size);
+    font-family: var(--type-body);
+    block-size: 100%;
     display: grid; 
     grid-template-rows: min-content 1fr min-content;
     align-items:center;
+    border: 1px solid black;
 }
 
 main { 
     padding-inline:var(--gutter);
+}
+hgroup{
+    padding-inline:var(--gutter);
     padding-block: var(--vertical);
-}
 h1 {
-    font-size: var(--heading-copy)
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    font-family: var(--type-header);
+    font-style: var(--type-header-style);
+    font-weight: var(--type-header-weight);
+    font-size: var(--heading-size);
+    line-clamp: 7ch;
+    line-height: 100%;
+    color: rgb(230, 230, 230);
+    -webkit-text-stroke: 1px rgb(18, 18, 18);
 }
+p{
+padding-block: var(--gutter);
+  font-style: var(--type-header-style);
+  font-size: var(--body-size);
+  line-height: 110%;
+  max-width: 80%;
+}
+}
+
 ul {
-    padding-inline: var(--gutter);
+    padding-block: var(--gutter);
     display: grid;
     gap: var(--gutter);
+    .item1{
+    color: rgb(180, 204, 255);
 }
-.reverse {
-    padding-block: var(--vertical);
-    color: var(--background);
-    background-color: var(--color);
-    padding-inline: var(--gutter);
+   .item2{
+    color: rgb(151, 255, 215);
 }
-footer {
-    color:var(--background);
-    background-color: var(--color);
-    padding-inline: var(--gutter);
+  .item3{
+    color: rgb(255, 225, 204);
 }
+
+    li {
+        padding-block:var(--gutter);
+        font-family: var(--type-header);
+        font-size: var(--subheading-size);
+        p{
+        font-family: var(--type-body);
+  font-size: var(--body-size);
+  line-height: 110%;
+  max-width: 80%;
+}
+}
+}
+        
+
+        
+    
+

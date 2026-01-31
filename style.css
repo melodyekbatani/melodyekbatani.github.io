@@ -1,4 +1,13 @@
 :root {
+/*for the index I want to design 3 modes - dark mode, light mode(default) and a fun shuffle mode (see reference here: https://farrynheight.com/) */
+/*I think the best way to do this would be through css variables and am looking at this reference to try to make that happen https://www.youtube.com/watch?v=_gKEUYarehE, potentially building on this in JS?*/
+/*these are just random colors to set up the design system*/
+
+--base-color: white;
+--base-variant: black;
+--text-color: blue; 
+
+/*Also having a bit with trouble fully understanding the variables specifically when it comes to fonts (do I need to write the font-style variable everytime) and responsivity */
     padding: 0.1rem;
     margin: 1em;
     background-color: rgb(255, 255, 255);
@@ -7,6 +16,7 @@
     --text-color:rgb(255, 255, 255); 
     --gutter: 2rem;
     --vertical: 4rem;  
+
     /*responsive type*/
     --scale: 1;
 
@@ -19,6 +29,7 @@
     /*subheading fonts*/
     --subheading-size: calc(var(--body-size) * 3);
     --type-subheading-weight:600;
+
     /*body copy fonts*/
     --type-body: "halyard-text", sans-serif;
     --type-body-style: normal;

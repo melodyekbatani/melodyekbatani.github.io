@@ -1,12 +1,14 @@
 :root {
-    --color: rgb(234, 234, 234); 
-    --background: rgb(18, 18, 19); 
-    --text-color:rgb(255, 255, 255); 
-    --gutter: 2rem;
-    --vertical: 4rem;  
     padding: 0.1rem;
     margin: 1em;
     background-color: rgb(255, 255, 255);
+    --color: rgb(234, 234, 234); 
+    --background: rgb(38, 38, 38); 
+    --text-color:rgb(255, 255, 255); 
+    --gutter: 2rem;
+    --vertical: 4rem;  
+    /*header fonts*/
+    --scale: 1;
 
     /*header fonts*/
     --type-header: "megazoid", sans-serif;
@@ -43,9 +45,11 @@ body {
 main { 
     padding-inline:var(--gutter);
 }
+
 hgroup{
     padding-inline:var(--gutter);
     padding-block: var(--vertical);
+
 h1 {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
     font-family: var(--type-header);
@@ -57,6 +61,7 @@ h1 {
     color: rgb(230, 230, 230);
     -webkit-text-stroke: 1px rgb(18, 18, 18);
 }
+
 p{
 padding-block: var(--gutter);
   font-style: var(--type-header-style);
@@ -64,7 +69,28 @@ padding-block: var(--gutter);
   line-height: 130%;
   max-width: 80%;
 }
+
+.menu {
+    padding-block: var(--gutter);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gutter);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+
+a{
+        font-weight: var(--type-body-weight);
+        font-family: var(--type-body);
+        text-transform: none;
+        font-size: var(--body-size);
+        line-height: 130%;
+  max-width: 80%;
 }
+}
+}
+
 
 ul {
     padding-block: var(--gutter);
@@ -96,11 +122,11 @@ ul {
         text-transform: uppercase;
         font-size: var(--subheading-size);
         p{
-            font-weight: var(--type-body-weight);
+        font-weight: var(--type-body-weight);
         font-family: var(--type-body);
         text-transform: none;
-  font-size: var(--body-size);
-  line-height: 130%;
+        font-size: var(--body-size);
+        line-height: 130%;
   max-width: 80%;
 }
 }
@@ -115,6 +141,35 @@ footer{
     }
 }
 }
+
+@media screen and (min-width: 760px) and (max-width: 1000px) {
+
+    :root {
+
+    }
+
+	h1 {
+
+    font-size: var(--heading-size);
+    line-clamp: 7ch;
+    line-height: 100%;
+    color: rgb(230, 230, 230);
+    -webkit-text-stroke: 1px rgb(18, 18, 18);
+}
+
+/* between Iphone and Tablet */
+@media screen and (min-width: 430px) and (max-width: 760px) {
+	body {
+		overflow-x: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+}
+}
+
+
+
 
         
     

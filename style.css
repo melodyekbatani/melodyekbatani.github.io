@@ -1,187 +1,242 @@
 :root {
-/*for the index I want to design 3 modes - dark mode, light mode(default) and a fun shuffle mode (see reference here: https://farrynheight.com/) */
-/*I think the best way to do this would be through css variables and am looking at this reference to try to make that happen https://www.youtube.com/watch?v=_gKEUYarehE, potentially building on this in JS?*/
-/*these are just random colors to set up the design system*/
+	/*for the index I want to design 3 modes - dark mode, light mode(default) and a fun shuffle mode (see reference here: https://farrynheight.com/) */
+	/*I think the best way to do this would be through css variables and am looking at this reference to try to make that happen https://www.youtube.com/watch?v=_gKEUYarehE, potentially building on this in JS?*/
+	/*these are just random colors to set up the design system*/
 
---base-color: white;
---base-variant: black;
---text-color: blue; 
+	/*light mode*/
+  --base-color: white;
+    --base-variant:GhostWhite;
+    --text-color: blue;
+    --primary-color: green;
+    --secondary-text: rgb(104, 201, 233);
+    --accent-color: green;
 
-/*Also having a bit with trouble fully understanding the variables specifically when it comes to fonts (do I need to write the font-style variable everytime) and responsivity */
-    padding: 0.1rem;
-    margin: 1em;
-    background-color: rgb(255, 255, 255);
-    --color: rgb(234, 234, 234); 
-    --background: rgb(38, 38, 38); 
-    --text-color:rgb(255, 255, 255); 
-    --gutter: 2rem;
-    --vertical: 4rem;  
+	/*dark mode*/
+	.darkmode{
+	--base-color: black;
+	--base-variant: rgb(48, 48, 48);
+	--text-color: orange;
+	--primary-color: tomato;
+	--secondary-text: red;
+	--accent-color: salmon;
+	}
 
-    /*responsive type*/
-    --scale: 1;
+	.funmode {
+	--base-color: green;
+	--base-variant: white;
+	--text-color: purple;
+	--primary-color: darkmagenta;
+	--secondary-text: pink;
+	--accent-color: Magenta;
+	}
 
-    /*header fonts*/
-    --type-header: "megazoid", sans-serif;
-    --type-header-style: normal;
-    --heading-size: calc(var(--body-size) * 8);
-    --webkit-text-stroke-width: 1px;
-    
-    /*subheading fonts*/
-    --subheading-size: calc(var(--body-size) * 3);
-    --type-subheading-weight:600;
+	/*padding variables*/
+	--gutter: 2rem;
+	--vertical: 1rem;
 
-    /*body copy fonts*/
-    --type-body: "halyard-text", sans-serif;
-    --type-body-style: normal;
-    --type-body-weight:400;
-    --body-size: 1.5rem;
+	/*Also having a bit with trouble fully understanding the variables specifically when it comes to fonts (do I need to write the font-style variable everytime) and responsivity */
+
+	padding:var(--vertical);
+	background-color: var(--base-color);
+
+
+	/*responsive type*/
+	--scale: 1;
+
+	/*header fonts*/
+	--type-header: "megazoid",
+	sans-serif;
+	--type-header-style: normal;
+	--heading-size: calc(var(--body-size) * 8);
+	--webkit-text-stroke-width: 1px;
+
+	/*subheading fonts*/
+	--subheading-size: calc(var(--body-size) * 3);
+	--type-subheading-weight:600;
+
+	/*body copy fonts*/
+	--type-body: "halyard-text",
+	sans-serif;
+	--type-body-style: normal;
+	--type-body-weight:400;
+	--body-size: 1.5rem;
 }
+
 
 body {
-    padding-block-end:2rem;
-    padding-block-start:10rem;
-    border-radius: 20px; 
-    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-    color: var(--text-color);
-    background-color: var(--background);
-    font-size: var(--body-size);
-    font-family: var(--type-body);
-    block-size: 100%;
-    display: grid; 
-    grid-template-rows: min-content 1fr min-content;
-    align-items:center;
-    border: 1px solid black;
+	padding-block-end: var(--vertical);
+	padding-block-start: 10rem;
+	block-size: 100%;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	align-items: center;
+	border-radius: 20px;
+
+	color: var(--accent-color);
+	background-color: var(--base-variant);
+	font-size: var(--body-size);
+	font-family: var(--type-body);
 }
 
-main { 
-    padding-inline:var(--gutter);
+
+/* theme switch button */
+/* I leant this from https://www.youtube.com/watch?v=_gKEUYarehE trying to figure out how to create the 2 modes on my website. The first part of this positions and lays out the theme switch icon and the second part calls the different icons depending on the mode, still trying to figure out how I can make this possible for 3 modes*/
+
+#theme-switch{
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+#theme-switch svg{
+  fill: var(--accent-color);
+}
+#theme-switch svg:last-child{
+  display: none;
+}
+#theme-switch svg:nth-child(2){
+  display: none;
 }
 
-hgroup{
-    padding-inline:var(--gutter);
-    padding-block: var(--vertical);
-
-h1 {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
-    font-family: var(--type-header);
-    font-style: var(--type-header-style);
-    font-weight: var(--type-header-weight);
-    font-size: var(--heading-size);
-    line-clamp: 7ch;
-    line-height: 100%;
-    color: rgb(230, 230, 230);
-    -webkit-text-stroke: 1px rgb(18, 18, 18);
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+.darkmode #theme-switch svg:last-child{
+  display: block;
+}
+.darkmode #theme-switch svg:nth-child(2){
+  display: none;
+}
+.funmode #theme-switch svg:first-child{
+  display: none;
+}
+.funmode #theme-switch svg:last-child{
+  display: none;
+}
+.funmode #theme-switch svg:nth-child(2){
+  display: block;
 }
 
-p{
-padding-block: var(--gutter);
-  font-style: var(--type-header-style);
-  font-size: var(--body-size);
-  line-height: 130%;
-  max-width: 80%;
+		
+
+main {
+	padding-inline: var(--gutter);
 }
 
-.menu {
-    padding-block: var(--gutter);
-    display: flex;
-    flex-direction: row;
-    gap: var(--gutter);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+hgroup {
+	padding-inline: var(--gutter);
+	padding-block: var(--vertical);
+
+	h1 {
+		font-family: var(--type-header);
+		font-style: var(--type-header-style);
+		font-weight: var(--type-header-weight);
+		font-size: var(--heading-size);
+		line-clamp: 7ch;
+		line-height: 100%;
+		color: var(--secondary-text);
+	}
+
+	p {
+		padding-block: var(--gutter);
+		font-style: var(--type-header-style);
+		font-size: var(--body-size);
+		line-height: 130%;
+		max-width: 80%;
+	}
+	.menu {
+		margin-block-start:-2rem;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
 
 
-a{
-        font-weight: var(--type-body-weight);
-        font-family: var(--type-body);
-        text-transform: none;
-        font-size: var(--body-size);
-        line-height: 130%;
-  max-width: 80%;
-}
-}
+		a {
+			font-weight: var(--type-body-weight);
+			font-family: var(--type-body);
+			text-transform: none;
+			font-size: var(--body-size);
+			line-height: 130%;
+			max-width: 80%;
+		}
+	}
 }
 
 
 ul {
-    padding-block: var(--gutter);
-    display: grid;
-    gap: var(--gutter);
-    .item1{
-    color: white;
-    p{
-        color: white;
-    }
-}
-   .item2{
-    color: white;
-    p{
-        color: white;
-    }
-}
-  .item3{
-    color: white;
-    p{
-        color: white;
-    }
-  }
+	padding-block: var(--gutter);
+	display: grid;
+	gap: var(--gutter);
+	color: var(--primary-color);
 
-    li {
-        padding-block:var(--gutter);
-        font-family: var(--body-size);
-        font-weight: var(--type-subheading-weight);
-        text-transform: uppercase;
-        font-size: var(--subheading-size);
-        p{
-        font-weight: var(--type-body-weight);
-        font-family: var(--type-body);
-        text-transform: none;
-        font-size: var(--body-size);
-        line-height: 130%;
-  max-width: 80%;
-}
-}
-footer{
-    p{
-         font-family: var(--body-size);
-         font-size: var(--subheading-size);
-         text-transform: uppercase;
-          padding-block: var(--vertical);
-          margin-block:var(--vertical);
-	padding-inline: var(--gutter);
-    }
-}
+
+	li {
+		padding-block: var(--gutter);
+		font-family: var(--body-size);
+		font-weight: var(--type-subheading-weight);
+		text-transform: uppercase;
+		font-size: var(--subheading-size);
+
+		p {
+			font-weight: var(--type-body-weight);
+			font-family: var(--type-body);
+			text-transform: none;
+			font-size: var(--body-size);
+			line-height: 130%;
+			max-width: 80%;
+		}
+	}
+
+	footer {
+		p {
+			font-family: var(--body-size);
+			font-size: var(--subheading-size);
+			text-transform: uppercase;
+			padding-block: var(--vertical);
+			margin-block: var(--vertical);
+			padding-inline: var(--gutter);
+		}
+	}
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px) {
 
-    :root {
 
-    }
+	:root {
+		font-size:60%;
 
-	h1 {
-
-    font-size: var(--heading-size);
-    line-clamp: 7ch;
-    line-height: 100%;
-    color: rgb(230, 230, 230);
-    -webkit-text-stroke: 1px rgb(18, 18, 18);
-}
-
-/* between Iphone and Tablet */
-@media screen and (min-width: 430px) and (max-width: 760px) {
-	body {
-		overflow-x: hidden;
-		margin: 0;
-		padding: 0;
+	h1{
+		line-clamp: 7ch;
+		line-height: 100%;
 	}
-
+	}
 }
+
+	/* between Iphone and Tablet */
+	@media screen and (min-width: 430px) and (max-width: 760px) {
+		:root {
+		font-size:40%;
+
+	h1{
+		padding-block-start: 10rem;
+		line-clamp: 7ch;
+		line-height: 100%;
+	}
+	}
+	Body {
+		overflow-x: hidden;
+			margin: 0;
+			padding: 0;
+	}
+			
 }
-
-
-
-
-        
-    
-

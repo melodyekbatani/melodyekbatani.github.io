@@ -17,7 +17,7 @@ color-scheme: light dark;
 
 /* Layout */
 --space-sm: 0.5rem;
---space-md: 1.5rem;
+--space-md: 2rem;
 --space-lg: 8rem; 
 --max-width: 56rem; 
 --radius: 1rem;
@@ -48,6 +48,7 @@ header {
     font-family: var(--font);
     border-radius: var(--radius);
     border: 0.05rem solid var(--color-border);
+    
 
          a {
         text-decoration: none;
@@ -62,16 +63,16 @@ header {
 
         }
         .logo {
-        font-weight: 700;
+        font-weight: 500;
         }
     }
     hgroup {
-    padding-inline: var(--space-sm);
-    margin-block: var(--space-sm);
-    padding-block: var(--space-md);
     background-color: var(--color-surface);
     border-radius: var(--radius);
     border: 0.05rem solid var(--color-border);
+    padding-inline: var(--space-md);
+    margin-block: var(--space-sm);
+    padding-block: var(--space-md);
         h1 {
             padding-block-start: var(--space-lg);
             font-family: var(--font);
@@ -80,8 +81,8 @@ header {
         }
         p {
             font-family: var(--font);
-            font-size: var(--space-md);
-            padding-block-start: var(--space-sm);
+            font-size: 1.25rem;
+            padding-block-start: var(--space-md);
             padding-block-end: var(--space-md);
         }
     }
@@ -104,7 +105,7 @@ header {
 
         h2 {
             font-size: var(--space-md);
-            font-weight: 700;
+            font-weight: 500;
         }
         .showcase {
             display: flex;
@@ -124,27 +125,35 @@ header {
     
 }
 footer {
-    margin-top: var(--space-md);
+    margin-block-start: var(--space-md);
     padding: var(--space-md);
+          h3 {
+            font-size: 6rem;
+        }
+        p {
+            font-size: 1.5rem;
+            padding-block-end: var(--space-md);
+        }
     
     .footer-menu-container {
       display: flex;  
       justify-content: space-between;
+        a {
+        text-decoration: none;
+        color: var(--color-subtle);
+    }
     }
     .footer-menu{
         display: flex;
         gap: var(--space-md);
 
+
          p {
         font-size: 0.875rem;
         color: var(--color-subtle);
         margin: 0;
-    }
+        }
     
-    a {
-        text-decoration: none;
-        color: var(--color-text);
-    }
 
     }
    
@@ -154,8 +163,19 @@ footer {
         max-width: 1200px;
         margin: 0 auto;
     }
+
+hgroup {
+    h1 {
+        max-width: 60%;
+    }
+    p{
+        max-width: 60%;
+    }
+}
+
 main ul {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-sm);
 }
+
 }

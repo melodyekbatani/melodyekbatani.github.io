@@ -28,6 +28,7 @@ body{
     padding: var(--space-sm);
     background-color: var(--color-background);
     color: var(--color-text);
+    font-family: var(--font);
 
         a {
         text-decoration: underline;
@@ -76,10 +77,17 @@ header {
         }
     }
 }
- main {
+ main ul {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
     }
     li {
         background-color: var(--color-surface);
+
+        h2 {
+            font-size: var(--space-lg);
+        }
     }
+
+

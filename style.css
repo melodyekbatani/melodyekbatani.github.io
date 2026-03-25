@@ -12,6 +12,7 @@ color-scheme: light dark;
 
 /* Typography */
 --font: 'Geist', sans-serif;
+--font-mono: 'Geist Mono', monospace;
 
 /* Layout */
 --space-sm: 0.5rem;

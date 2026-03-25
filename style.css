@@ -39,7 +39,7 @@ header {
     nav {
     display:flex; 
     justify-content: space-between;
-    padding: var(--space-sm) var(--space-sm); 
+    padding: var(--space-sm); 
     background-color: var(--color-surface);
     font-family: var(--font);
     border-radius: var(--radius);
@@ -107,6 +107,33 @@ header {
 
     }
     }
+    
+}
+footer {
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    
+    .footer-menu-container {
+      display: flex;  
+      justify-content: space-between;
+    }
+    .footer-menu{
+        display: flex;
+        gap: var(--space-md);
+
+         p {
+        font-size: 0.875rem;
+        color: var(--color-subtle);
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    }
+   
 }
 @media (min-width: 768px) {
      body {

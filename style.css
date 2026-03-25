@@ -73,10 +73,11 @@ header {
     padding-inline: var(--space-md);
     margin-block: var(--space-sm);
     padding-block: var(--space-md);
+
         h1 {
             padding-block-start: var(--space-lg);
             font-family: var(--font);
-            font-size: var(--space-lg);
+            font-size: 5rem;
             line-height: 90%;
         }
         p {
@@ -87,11 +88,14 @@ header {
         }
     }
 }
- main ul {
+
+main ul {
         display: grid;
         grid-template-columns: 1fr;
         gap: var(--space-sm);
-
+  p {
+            padding-block: var(--space-sm);
+        }
    
     li {
         display: flex;
@@ -112,26 +116,26 @@ header {
             gap: var(--space-sm);
             overflow: hidden;
 
-        img {
-        flex: 1;
-        object-fit: cover;
-        min-width: 0;
-        height: 4rem;
-        height: 100%;
+            img {
+            flex: 1;
+            object-fit: cover;
+            min-width: 0;
+            height: 4rem;
+            height: 100%;
+            }
         }
-
-    }
     }
     
 }
+
 footer {
     margin-block-start: var(--space-md);
     padding: var(--space-md);
           h3 {
-            font-size: 6rem;
+            font-size: 5rem;
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1rem;
             padding-block-end: var(--space-md);
         }
     
@@ -167,6 +171,7 @@ footer {
 hgroup {
     h1 {
         max-width: 60%;
+        font-size: 8rem;
     }
     p{
         max-width: 60%;
@@ -176,6 +181,16 @@ hgroup {
 main ul {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-sm);
+}
+footer {
+    h3 {
+            font-size: 6rem;
+        }
+    p {
+            font-size: 1.5rem;
+            padding-block-end: var(--space-md);
+        }
+    
 }
 
 }

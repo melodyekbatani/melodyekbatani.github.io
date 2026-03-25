@@ -3,9 +3,20 @@
 
 color-scheme: light dark; 
 
+/* Colors */
 --color-background: light-dark(#F6F8FA, #0d1117);
---color-border:     light-dark(#d0d7de, #21262d);
---color-text:       light-dark(#000000, #ffffff);
---color-surface:    light-dark(#ffffff, #000000);
---color-subtle:     light-dark(#666666, #888888);
+--color-border: light-dark(#d0d7de, #21262d);
+--color-text: light-dark(#000000, #ffffff);
+--color-surface: light-dark(#ffffff, #000000);
+--color-subtle: light-dark(#666666, #888888);
+
+/* Typography */
+--font: 'Geist', sans-serif;
+
+/* Layout */
+--space-sm: 0.5rem;
+--space-md: 1.5rem;
+--space-lg: 4rem; 
+--max-width: 56rem; 
+--radius: 1rem;
 }

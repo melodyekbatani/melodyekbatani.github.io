@@ -1,0 +1,11 @@
+:root {
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark*/
+
+color-scheme: light dark; 
+
+--color-background: light-dark(#F6F8FA, #0d1117);
+--color-border:     light-dark(#d0d7de, #21262d);
+--color-text:       light-dark(#000000, #ffffff);
+--color-surface:    light-dark(#ffffff, #000000);
+--color-subtle:     light-dark(#666666, #888888);
+}

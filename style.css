@@ -4,10 +4,10 @@
 	color-scheme: light dark;
 
 	/* Colors */
-	--color-background: light-dark(#F6F8FA, #0d1117);
+	--color-background: light-dark(white, black);
 	--color-border: light-dark(#dbdde0, #21262d);
 	--color-text: light-dark(#000000, #ffffff);
-	--color-surface: light-dark(#ffffff, #000000);
+	--color-surface: light-dark(#f7f8fa, #f7f8fa);
 	--color-subtle: light-dark(#666666, #888888);
 	--color-links: light-dark(#ff0000, #ff0000);
 
@@ -25,6 +25,7 @@
 	--space-lg: 8rem;
 	--max-width: 56rem;
 	--radius: 1rem;
+	--card-width: 30rem;
 }
 
 body {
@@ -96,12 +97,13 @@ main {
 		li {
 			display: flex;
 			flex-direction: column;
-			padding: var(--space-md);
+			padding: var(--space-sm);
 			gap: var(--space-sm);
 			background-color: var(--color-surface);
 			border-radius: var(--radius);
 			border: 0.05rem solid var(--color-border);
 			transition: border-color 0.15s ease; 
+			block-size: fit-content;
 
 			&:hover {
 				border-color: var(--color-subtle);
@@ -127,11 +129,10 @@ main {
 
 
 footer {
-	padding: var(--space-md);
+	padding: var(--space-sm);
 
 	p {
 		font-size: var(--font-size-sm);
-		padding-block-end: var(--space-md);
 	}
 }
 
@@ -146,15 +147,17 @@ footer {
 	header {
 		display: flex; 
 		flex-direction: column;
+		flex-shrink: 0;
 		
 		nav { 
-			justify-content: flex-end; 
+			justify-content: space-between; 
 		}
 
 		hgroup {
 			display: flex;
 			gap: var(--space-md);
 			padding-block: var(--space-md);
+			padding-inline-start: 0;
  
 			h1 {
 				padding-block-start: 0;
@@ -172,6 +175,7 @@ footer {
 	}
 	main {
 		flex: 1;
+		min-block-size: 0;
 		overflow: hidden;
 
 	ul { 
@@ -181,8 +185,10 @@ footer {
 		gap: var(--space-sm); 
 	}
 	li { 
-		inline-size: 22rem;
+		inline-size: var(--card-width);
 		flex-shrink: 0;
+		block-size: 100%;
+		overflow: hidden;
 
 		&:hover { 
 			border-color: var(--color-subtle);
@@ -191,6 +197,9 @@ footer {
 	img { 
 		flex: 1;
 		block-size: auto;
+                min-block-size: 0;
+                object-fit: cover;
+                inline-size: 100%;
 	}
 	}
 }

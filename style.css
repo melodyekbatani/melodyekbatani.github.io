@@ -166,7 +166,7 @@ main {
 			}
 
 			&:hover {
-				transform: translateY(-4px);
+				transform: translateY(-0.8rem);
 			}
 
 			img {

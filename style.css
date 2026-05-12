@@ -9,7 +9,7 @@
 	--color-text: light-dark(#000000, #ffffff);
 	--color-surface: light-dark(#ffffff, #000000);
 	--color-subtle: light-dark(#666666, #888888);
-	--color-links: light-dark(#000000, #000000);
+	--color-links: light-dark(#ff0000, #ff0000);
 
 	/* Typography */
 	--font: 'Geist', sans-serif;
@@ -28,7 +28,7 @@
 }
 
 body {
-	width: 100%;
+	inline-size: 100%;
 	padding: var(--space-sm);
 	background-color: var(--color-background);
 	color: var(--color-text);
@@ -36,6 +36,7 @@ body {
 
 	a {
 		text-decoration: underline;
+		color: var(--color-links);
 	}
 
 	p {
@@ -45,29 +46,16 @@ body {
 }
 
 header {
+	padding: var(--space-sm);
+	margin-block-end: var(--space-md);
+
 	nav {
 		display: flex;
-		justify-content: space-between;
+		justify-content:inline-start;
 		padding: var(--space-sm);
-		background-color: var(--color-surface);
-		font-family: var(--font);
-		border-radius: var(--radius);
-		border: 0.05rem solid var(--color-border);
+		gap: var(--space-md);
+		list-style: none;
 
-		a {
-			text-decoration: none;
-		}
-
-		.menu {
-			display: flex;
-			flex-direction: row;
-			gap: var(--space-md);
-			list-style: none;
-		}
-
-		.logo {
-			font-weight: 500;
-		}
 	}
 
 	hgroup {
@@ -77,7 +65,6 @@ header {
 
 		h1 {
 			padding-block-start: var(--space-lg);
-			font-family: var(--font);
 			font-size: var(--font-size-lg);
 			line-height: 90%;
 		}
@@ -85,7 +72,6 @@ header {
 		p {
 			padding-block-start: var(--space-md);
 			padding-block-end: var(--space-md);
-			font-family: var(--font);
 			font-size: var(--font-size-md);
 		}
 	}

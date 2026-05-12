@@ -17,7 +17,7 @@
 	--font-size-sm: 1rem; 
 	--font-size-md: 1.5rem; 
 	--font-size-lg: 3rem;
-	--font-size-lx: 10rem;
+	--font-size-xl: 5rem;
 
 	/* Layout */
 	--space-sm: 0.5rem;
@@ -115,91 +115,81 @@ main {
 			p {
 				padding-block: var(--space-sm); 
 			}
-			.showcase {
-				display: flex;
-				gap: var(--space-sm);
-				overflow: hidden;
 
 				img {
-					flex: 1;
 					object-fit: cover;
-					min-width: 0;
-					height: 4rem;
-					height: 100%;
+					block-size: 14rem;
+					inline-size: 100%;
 				}
 			}
 		}
 	}
-}
+
 
 footer {
-	margin-block-start: var(--space-md);
 	padding: var(--space-md);
-
-	h3 {
-		font-size: var(--font-size-lg);
-		line-height: 95%;
-	}
 
 	p {
 		font-size: var(--font-size-sm);
 		padding-block-end: var(--space-md);
 	}
-
-	.footer-menu-container {
-		display: flex;
-		justify-content: space-between;
-
-		a {
-			text-decoration: none;
-			color: var(--color-subtle);
-		}
-	}
-
-	.footer-menu {
-		display: flex;
-		gap: var(--space-md);
-
-		p {
-			font-size:var(--font-size-sm);
-			color: var(--color-subtle);
-			margin: 0;
-		}
-	}
 }
 
 @media (min-width: 768px) {
 	body {
-		max-width: 1200px;
 		margin: 0 auto;
 	}
 
 	header {
+		block-size: 100dvh;
+		display: flex; 
+		flex-direction: column;
+		
+		nav { 
+			justify-content: flex-end; 
+		}
+
 		hgroup {
+			display: flex;
+			gap: var(--space-md);
+			margin-block-start: auto;
+			padding-block: var(--space-md);
+ 
 			h1 {
-				max-width: 60%;
-				font-size: 10rem;
+				padding-block-start: 0;
+				font-size: var(--font-size-xl);
+				flex: 1;
 			}
-
+ 
 			p {
-				max-width: 60%;
+				font-size: var(--font-size-sm);
+				inline-size: 20rem;
+				flex-shrink:0;
+				padding-block: 0;
 			}
 		}
 	}
+	main {
+		overflow: hidden;
 
-	main ul {
-		grid-template-columns: 1fr 1fr;
-		gap: var(--space-sm);
+	ul { 
+		display: flex; 
+		overflow-x: auto;
+		block-size: 100%;
+		gap: var(--space-sm); 
 	}
+	li { 
+		inline-size: 22rem;
+		flex-shrink: 0;
 
-	footer {
-		h3 {
-			font-size: 6rem;
+		&:hover { 
+			border-color: var(--color-accents);
 		}
 
-		p {
-			font-size: 1.5rem;
-			padding-block-end: var(--space-md);
-		}
+	img { 
+		flex: 1;
+		block-size: auto;
+	}
 	}
 }
+	}

@@ -88,13 +88,14 @@ header {
 			&::after {
 				content: '';
 				position: absolute;
-				bottom: -0.2rem;
-				left: 0;
+				inset-block-end: -0.2rem;
+				inset-inline-start: 0;
 				inline-size: 0;
 				block-size: 0.1rem;
 				background-color: currentColor;
-				transition: width 0.3s ease;
+				transition: inline-size 0.3s ease; /* https://www.youtube.com/watch?v=psLRMRaBLI4 and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size */
 			}
+
 
 			&:hover::after {
 				inline-size: 100%;
@@ -150,12 +151,12 @@ main {
 					&::after {
 						content: '';
 						position: absolute;
-						bottom: -0.2rem;
-						left: 0;
+						inset-block-end: -0.2rem;
+						inset-inline-start: 0;
 						inline-size: 0;
 						block-size: 0.1rem;
 						background-color: currentColor;
-						transition: width 0.3s ease;
+						transition: inline-size 300ms ease;
 					}
 				}
 			}

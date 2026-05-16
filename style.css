@@ -59,7 +59,6 @@ body {
 	gap: var(--space-lg);
 	inline-size: 100%;
 	padding: var(--space-sm);
-
 	background-color: var(--color-background);
 }
 
@@ -179,7 +178,7 @@ main {
 	}
 }
 
-/* Media Query */
+/* Desktop */
 
 @media (width>768px) {
 
